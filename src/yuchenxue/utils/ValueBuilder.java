@@ -1,6 +1,7 @@
 package yuchenxue.utils;
 
 import today.opai.api.interfaces.modules.values.BooleanValue;
+import today.opai.api.interfaces.modules.values.LabelValue;
 import today.opai.api.interfaces.modules.values.ModeValue;
 import today.opai.api.interfaces.modules.values.NumberValue;
 import yuchenxue.OutExtension;
@@ -39,6 +40,18 @@ public class ValueBuilder {
 
     public NumberValue createNumber(String name, double value, double min , double max, double step, String suffix) {
         NumberValue create = OutExtension.API.getValueManager().createDouble(name, value, min, max, step).setSuffix(suffix);
+        module.addValues(create);
+        return create;
+    }
+
+    public NumberValue createInteger(String name, int value, int min , int max) {
+        NumberValue create = OutExtension.API.getValueManager().createDouble(name, value, min, max, 1);
+        module.addValues(create);
+        return create;
+    }
+
+    public LabelValue createLabel(String name) {
+        LabelValue create = OutExtension.API.getValueManager().createLabel(name);
         module.addValues(create);
         return create;
     }

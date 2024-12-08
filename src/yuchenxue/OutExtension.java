@@ -3,7 +3,7 @@ package yuchenxue;
 import today.opai.api.Extension;
 import today.opai.api.OpenAPI;
 import today.opai.api.annotations.ExtensionInfo;
-import yuchenxue.module.modules.ModuleAutoSword;
+import yuchenxue.module.modules.ModuleAutoWeapon;
 
 /**
  * @author yuchenxue
@@ -20,7 +20,7 @@ public class OutExtension extends Extension {
         OutExtension.API = openAPI;
 
         // register module
-        openAPI.registerFeature(new ModuleAutoSword());
+        openAPI.registerFeature(new ModuleAutoWeapon());
         // command
     }
 }
