@@ -1,5 +1,3 @@
-# AutoSword
+# AutoWeapon
 
-A simple extension to select **the first sword** in hotbar.
-
-Disadvantage: Can't find the best Sword.
+A simple extension to select weapon in hotbar.
