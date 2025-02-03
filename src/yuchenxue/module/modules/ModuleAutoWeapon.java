@@ -23,10 +23,10 @@ public class ModuleAutoWeapon extends ScriptModule {
     }
 
     // value
-    private final LabelValue priority = builder.createLabel("Priority");
-    private final NumberValue sword = builder.createInteger("Sword", 5, 0, 5);
-    private final NumberValue axe = builder.createInteger("Axe", 3, 0, 5);
-    private final NumberValue pickaxe = builder.createInteger("Pickaxe", 0, 0, 5);
+    private final LabelValue priority = label("Priority");
+    private final NumberValue sword = integer("Sword", 5, 0, 5);
+    private final NumberValue axe = integer("Axe", 3, 0, 5);
+    private final NumberValue pickaxe = integer("Pickaxe", 0, 0, 5);
 
     @Override
     public void onPacketSend(EventPacketSend event) {

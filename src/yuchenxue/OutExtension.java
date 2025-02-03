@@ -3,6 +3,7 @@ package yuchenxue;
 import today.opai.api.Extension;
 import today.opai.api.OpenAPI;
 import today.opai.api.annotations.ExtensionInfo;
+import yuchenxue.module.ScriptModule;
 import yuchenxue.module.modules.ModuleAutoWeapon;
 
 /**
@@ -10,7 +11,7 @@ import yuchenxue.module.modules.ModuleAutoWeapon;
  * @date 2024/12/07 - 22:41
  */
 
-@ExtensionInfo(name = "AutoSword",author = "yuchenxue",version = "1.0")
+@ExtensionInfo(name = "AutoWeapon",author = "yuchenxue",version = "1.0")
 public class OutExtension extends Extension {
 
     public static OpenAPI API;
@@ -20,7 +21,11 @@ public class OutExtension extends Extension {
         OutExtension.API = openAPI;
 
         // register module
-        openAPI.registerFeature(new ModuleAutoWeapon());
-        // command
+        register(new ModuleAutoWeapon());
+    }
+
+    private void register(ScriptModule module) {
+        module.setEventHandler(module);
+        API.registerFeature(module);
     }
 }
